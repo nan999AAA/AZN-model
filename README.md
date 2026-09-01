@@ -62,7 +62,6 @@
   * `PR MONTH.py`：PR 月尺度数据处理代码
   * `merged_1.5deg_no_norm.nc`：未归一化的月尺度合并数据
   * `merged_1.5deg_no_norm_with_tp.nc`：包含 PR 数据的未归一化月尺度合并数据
-  * `.DS_Store`：macOS 系统文件
 
 * `README.md`：总体说明文件。
 
