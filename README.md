@@ -31,31 +31,44 @@
 
 本文件夹按照预报变量和模型类型进行组织。
 
-- `T2M/`：2 m temperature（T2M）相关模型的训练代码和数据。
-  - `simpleCNN/`：Simple CNN 模型
-  - `CG/`：ConvGRU 模型
-  - `I/`：I 模型
-  - `tc/`：Transformer-CNN 模型
-  - `U-net/`：U-Net 模型
-  - `SA1/`：SA1 模型
-  - `D.nc`：T2M 模型训练数据
-  - `D.ipynb`：T2M 数据处理相关 Notebook
+* `T2M/`：2 m temperature（T2M）相关模型的训练代码和数据。
 
-- `MSLP/`：mean sea level pressure（MSLP）相关模型的训练代码和数据。
-  - `1 u/`：模型 1
-  - `2 SA/`：模型 2
-  - `3 TC/`：模型 3
-  - `4 upCG3/`：模型 4
-  - `mslp_2D.nc`：MSLP 模型训练数据
+  * `simpleCNN/`：Simple CNN 模型
+  * `CG/`：ConvGRU 模型
+  * `I/`：I 模型
+  * `tc/`：Transformer-CNN 模型
+  * `U-net/`：U-Net 模型
+  * `SA1/`：SA1 模型
+  * `D.nc`：T2M 模型训练数据
+  * `D.ipynb`：T2M 数据处理相关 Notebook
 
-- `PR/`：precipitation（PR）相关模型的训练代码和数据。
-  - `U-NET/`：U-Net 模型
-  - `SA/`：SA 模型
-  - `tp_2D.nc`：PR 模型训练数据
+* `MSLP/`：mean sea level pressure（MSLP）相关模型的训练代码和数据。
 
-- `README.md`：总体说明文件。
-- `requirements.txt`：Python 环境及依赖配置文件。
-- `environment.yml`：Conda 环境配置文件，与 `requirements.txt` 二选一。
+  * `1 u/`：模型 1
+  * `2 SA/`：模型 2
+  * `3 TC/`：模型 3
+  * `4 upCG3/`：模型 4
+  * `mslp_2D.nc`：MSLP 模型训练数据
+
+* `PR/`：precipitation（PR）相关模型的训练代码和数据。
+
+  * `U-NET/`：U-Net 模型
+  * `SA/`：SA 模型
+  * `tp_2D.nc`：PR 模型训练数据
+
+* `Monthly/`：月尺度数据处理相关代码和数据。
+
+  * `T2M&MSLP MONTH.py`：T2M 和 MSLP 月尺度数据处理代码
+  * `PR MONTH.py`：PR 月尺度数据处理代码
+  * `merged_1.5deg_no_norm.nc`：未归一化的月尺度合并数据
+  * `merged_1.5deg_no_norm_with_tp.nc`：包含 PR 数据的未归一化月尺度合并数据
+  * `.DS_Store`：macOS 系统文件
+
+* `README.md`：总体说明文件。
+
+* `requirements.txt`：Python 环境及依赖配置文件。
+
+* `environment.yml`：Conda 环境配置文件，与 `requirements.txt` 二选一。
 
 ---
 
@@ -65,12 +78,17 @@
 
 使用 Conda：
 
-    conda env create -f environment.yml
-    conda activate <环境名称>
+```
+conda env create -f environment.yml
+
+conda activate <环境名称>
+```
 
 或使用 pip：
 
-    pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```
 
 ### **3.2 模型运行**
 
@@ -78,25 +96,53 @@
 
 T2M：
 
-    python T2M/simpleCNN/T2M-simpleCNN-subseasonal_model_cpuc.py
+```
+python T2M/simpleCNN/T2M-simpleCNN-subseasonal_model_cpuc.py
+```
 
 其他 T2M 模型：
 
-    python T2M/<模型目录>/<脚本名称>.py
+```
+python T2M/<模型目录>/<脚本名称>.py
+```
 
 MSLP：
 
-    python "MSLP/<模型目录>/<脚本名称>.py"
+```
+python "MSLP/<模型目录>/<脚本名称>.py"
+```
 
 PR：
 
-    python PR/<模型目录>/<脚本名称>.py
+```
+python PR/<模型目录>/<脚本名称>.py
+```
+
+Monthly：
+
+```
+python "Monthly/T2M&MSLP MONTH.py"
+
+python "Monthly/PR MONTH.py"
+```
 
 训练数据：
 
-    T2M/D.nc
-    MSLP/mslp_2D.nc
-    PR/tp_2D.nc
+```
+T2M/D.nc
+
+MSLP/mslp_2D.nc
+
+PR/tp_2D.nc
+```
+
+Monthly 数据：
+
+```
+Monthly/merged_1.5deg_no_norm.nc
+
+Monthly/merged_1.5deg_no_norm_with_tp.nc
+```
 
 > 具体脚本名称以各模型文件夹中的实际 Python 文件为准。
 
