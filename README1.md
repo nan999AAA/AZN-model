@@ -62,7 +62,6 @@ This folder is organized according to forecast variables and model types.
   * `PR MONTH.py`: Monthly PR data processing
   * `merged_1.5deg_no_norm.nc`: Merged monthly data without normalization
   * `merged_1.5deg_no_norm_with_tp.nc`: Merged monthly data without normalization, including PR
-  * `.DS_Store`: macOS system file
 
 * `README.md`: General documentation
 
