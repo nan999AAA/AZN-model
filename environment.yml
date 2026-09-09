@@ -1,0 +1,16 @@
+name: AZN
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - xarray
+  - netCDF4
+  - tqdm
+  - matplotlib
+  - pip
+  - pip:
+      - torch
